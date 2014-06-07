@@ -1,0 +1,43 @@
+.boom {
+  width: 81px;
+  height: 65px;
+  display: block;
+  background-image: url(../img/boom.png);
+  -webkit-animation: boom 1s steps(9) infinite;
+  -moz-animation: boom 1s steps(9) infinite;
+  -o-animation: boom 1s steps(9) infinite;
+  -ms-animation: boom 1s steps(9) infinite;
+  animation: boom 1s steps(9) infinite; }
+
+@-webkit-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-moz-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-ms-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-o-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+
+/*# sourceMappingURL=animations.css.map */

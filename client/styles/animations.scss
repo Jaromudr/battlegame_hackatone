@@ -1,0 +1,47 @@
+
+
+$boom-width:81px;
+$boom-steps:9;
+$boom-time:1s;
+
+@mixin animation($attr) {
+    -webkit-animation: $attr;
+    -moz-animation: $attr;
+    -o-animation: $attr;
+    -ms-animation: $attr;
+    animation: $attr;
+}
+
+.boom {
+    width: $boom-width;
+    height: 65px;
+    display: block;
+    background-image: url(../img/boom.png);
+    @include animation (boom $boom-time steps($boom-steps) infinite);
+}
+
+
+
+// keyframes mixin
+@mixin keyframes($name) {
+    @-webkit-keyframes #{$name} {
+        @content; 
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @keyframes #{$name} {
+        @content;
+    } 
+}
+
+@include keyframes(boom){
+    from { background-position:0px 50%; }
+    to { background-position:-($boom-width)*($boom-steps) 50%; }
+}
