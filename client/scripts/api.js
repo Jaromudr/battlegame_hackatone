@@ -1,12 +1,12 @@
 (function(global) {
 
     var settings = {
-        baseURL: "http://quizj.ag.wap3.com.ua",
+        baseURL: "http://127.0.0.1:8888",
         cellSide: 20
 
     }
 
-    settings.apiURL = settings.baseURL + "/api/";
+    settings.apiURL = settings.baseURL + "/";
 
     function addUrl(key, url, method){
         settings[key] = {
@@ -16,15 +16,15 @@
     }
 
     // Users
-    addUrl("join", "/user/join", "POST");
+    addUrl("join", "user/join");
     
     // Game
-    addUrl("gameStatus", "/game/{gameId}/status");
-    addUrl("loadUserShips", "/game/{gameId}/load-user-ships/{userId}");
-    addUrl("saveUserShips", "/game/{gameId}/save-user-ships/{userId}");
-    addUrl("isMyStep", "/game/{gameId}/is-my-step/{userId}"); // should return opponent actions
-    addUrl("saveUserActions", "/game/{gameId}/save-user-actions/{userId}");
-    addUrl("gameResults", "/game/{gameId}/results");
+    addUrl("gameStatus", "game/{gameId}/status");
+    addUrl("loadUserShips", "game/{gameId}/load-user-ships/{userId}");
+    addUrl("saveUserShips", "game/{gameId}/save-user-ships/{userId}");
+    addUrl("isMyStep", "game/{gameId}/is-my-step/{userId}"); // should return opponent actions
+    addUrl("saveUserActions", "game/{gameId}/save-user-actions/{userId}");
+    addUrl("gameResults", "game/{gameId}/results");
 
     function API(){}
 

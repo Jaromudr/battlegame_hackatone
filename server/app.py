@@ -1,5 +1,7 @@
+from simplejson import json
 import tornado.ioloop
 import tornado.web
+
 
 users = {}
 pending_games = []
@@ -9,10 +11,14 @@ class User(object):
     def __init__(self, nickname):
         self.nickname = nickname
 
+    def __repr__(self):
+        return json.dumps({"nickname": self.nickname})
+
 
 class Game(object):
     def __init__(self, hero):
         self.hero = hero
+        self.status = "pending"
 
     def addOpponent(self, opponent):
         self.opponent = opponent
@@ -23,7 +29,7 @@ class Game(object):
 
 class UsersHanler(tornado.web.RequestHandler):
     def get(self):
-        self.write(users)
+        self.write(json.dumps(users))
 
 
 class JoinHendler(tornado.web.RequestHandler):
@@ -49,6 +55,9 @@ class JoinHendler(tornado.web.RequestHandler):
 
             else:
                 game = Game(user)
+                pending_games.append(game)
+
+            users[nickname] = user
 
             self.write({
                 "status": game.status
