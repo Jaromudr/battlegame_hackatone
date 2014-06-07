@@ -16,7 +16,8 @@
     }
 
     // Users
-    // addUrl("register", "call/user/register/email", "PUT");
+    addUrl("login", "/user/login", "PUT");
+    addUrl("checkStep", "/game/{gameId}/checkStep/{userId}");
 
     function API(){}
 

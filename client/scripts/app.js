@@ -6,9 +6,17 @@
         this.appBody = document.getElementById("appBody");
     }
 
-    App.prototype = {}
+    App.prototype = {
+    	clearBody: function(){
+    		this.appBody.innerHTML = "";
+    	},
+        joinToGame: function(gameId){
+            this.game = new Game(gameId);
+            this.game.play();
+        }
+    }
 
-    // augment(App, AppViews);
+    augment(App, Views);
 
     global.App = App;
 

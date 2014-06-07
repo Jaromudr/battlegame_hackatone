@@ -4,20 +4,22 @@
         options = options || {};
         
         this.boardWidth = options.boardWidth || 20;
+        this.baseAreaWidth = options.baseAreaWidth || 5;
         this.boardHeight = options.boardHeight || 20;
         
-        this.shipsArray = [];
-        
-        this.game=undefined;
+        this.ships = [];
     }
     
     Board.prototype = {
-        assignGame: function(game){
-            this.game=game;
-            if(game.board===undefined){
-                game.setBoard(this);
-            }
+        render: function(){
+            this.element = dom(".board");
+            return this.element;
+        },
+        putShip: function(ship){
+            this.ships.push(ship);
+            board.appendChild(ship.element);
         }
+
     };
     
     global.Board=Board;
