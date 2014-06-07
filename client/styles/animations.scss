@@ -1,18 +1,10 @@
-
+@import '_animation';
 
 $boom-width:81px;
 $boom-steps:9;
 $boom-time:1s;
 
-@mixin animation($attr) {
-    -webkit-animation: $attr;
-    -moz-animation: $attr;
-    -o-animation: $attr;
-    -ms-animation: $attr;
-    animation: $attr;
-}
-
-.boom {
+.anim-boom {
     width: $boom-width;
     height: 65px;
     display: block;
@@ -20,28 +12,56 @@ $boom-time:1s;
     @include animation (boom $boom-time steps($boom-steps) infinite);
 }
 
+$stars-time:1800s;
+$stars-width:956px;
+$stars-height:1008px;
 
-
-// keyframes mixin
-@mixin keyframes($name) {
-    @-webkit-keyframes #{$name} {
-        @content; 
-    }
-    @-moz-keyframes #{$name} {
-        @content;
-    }
-    @-ms-keyframes #{$name} {
-        @content;
-    }
-    @-o-keyframes #{$name} {
-        @content;
-    }
-    @keyframes #{$name} {
-        @content;
-    } 
+.anim-stars {
+    /*background-image: url(../img/star1.png),url(../img/star2.png),url(../img/star3.png),url(../img/star4.png);*/
+    background-image: url(../img/star1.png),url(../img/star2.png);
+    background-position: 0% 0%, 0% 0%;
+    background-repeat: repeat,repeat;
+    background-color:#17192E;
+    @include animation (stars $stars-time infinite linear);
 }
 
 @include keyframes(boom){
     from { background-position:0px 50%; }
     to { background-position:-($boom-width)*($boom-steps) 50%; }
+}
+
+@include keyframes(stars){
+    0% {
+        background-position:0px 0px, 0px 0px;
+    }
+    10% {
+        background-position:0.1*$stars-width 0.1*$stars-height, 0.1*$stars-width 0.1*$stars-height;
+    }
+    20% {
+        background-position:0.2*$stars-width 0*$stars-height, 0.25*$stars-width 0.1*$stars-height;
+    }
+    30% {
+        background-position:0.1*$stars-width 0.3*$stars-height, 0.15*$stars-width 0.2*$stars-height;
+    }
+    40% {
+        background-position:0.1*$stars-width 0.5*$stars-height, 0.2*$stars-width 0.3*$stars-height;
+    }
+    50% {
+        background-position:0.2*$stars-width 0.65*$stars-height, 0.3*$stars-width 0.4*$stars-height;
+    }
+    60% {
+        background-position:0.3*$stars-width 0.6*$stars-height, 0.3*$stars-width 0.6*$stars-height;
+    }
+    70% {
+        background-position:0.5*$stars-width 0.6*$stars-height, 0.4*$stars-width 0.7*$stars-height;
+    }
+    80% {
+        background-position:0.7*$stars-width 0.8*$stars-height, 0.6*$stars-width 0.8*$stars-height;
+    }
+    90% {
+        background-position:0.9*$stars-width 0.9*$stars-height, 0.8*$stars-width 0.9*$stars-height;
+    }
+    100% {
+        background-position:$stars-width $stars-height, $stars-width $stars-height;
+    }
 }

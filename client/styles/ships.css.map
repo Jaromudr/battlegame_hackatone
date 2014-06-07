@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAEA,KAAM;EACF,OAAO,EAAC,KAAK;EACb,mBAAmB,EAAE,OAAO;EAC5B,eAAe,EAAE,IAAI;;AAGzB,YAAa;EACT,KAAK,EAAC,IAAgB;EACtB,MAAM,EAAC,IAAgB;;AAG3B,YAAa;EACT,KAAK,EAAC,IAAgB;EACtB,MAAM,EAAC,IAAgB",
+"sources": ["ships.scss"],
+"names": [],
+"file": "ships.css"
+}

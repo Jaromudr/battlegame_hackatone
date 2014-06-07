@@ -1,0 +1,14 @@
+.ship {
+  display: block;
+  background-position: 50% 50%;
+  background-size: 100%; }
+
+.ship-size-2 {
+  width: 65px;
+  height: 65px; }
+
+.ship-size-3 {
+  width: 98px;
+  height: 98px; }
+
+/*# sourceMappingURL=ships.css.map */
