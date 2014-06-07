@@ -7,6 +7,7 @@ users = {}
 pending_games = []
 games = []
 
+
 class User(object):
     def __init__(self, nickname):
         self.nickname = nickname
@@ -19,7 +20,7 @@ class Game(object):
     def __init__(self, hero):
         self.hero = hero
         self.status = "pending"
-        self.game_id = uuid4()
+        self.game_id = str(uuid4().fields[-1])
 
     def addOpponent(self, opponent):
         self.opponent = opponent
@@ -41,7 +42,7 @@ class JoinHendler(tornado.web.RequestHandler):
             raise tornado.web.HTTPError(417, u'Data passed is not correct')
 
         if nickname in users:
-            raise tornado.web.HTTPError(406, u'User with nick %s already online: %s' % nickname)
+            raise tornado.web.HTTPError(406, u'User with nick %s already online' % nickname)
 
         else:
             user = User(nickname)
