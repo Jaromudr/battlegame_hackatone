@@ -7,6 +7,7 @@
         this.boardHeight = options.boardHeight || 20;
         
         this.shipsArray = [];
+        this.lightersArray = [];
         
         this.game=undefined;
     }
@@ -16,6 +17,14 @@
             this.game=game;
             if(game.board===undefined){
                 game.setBoard(this);
+            }
+        },
+        render: function(){
+            this.element = dom('.board');
+            this.element.addClass('.board-width-'+this.boardWidth);
+            this.element.addClass('.board-height-'+this.boardHeight);
+            for(ship in this.shipsArray){
+                ship.render();
             }
         }
     };
