@@ -4,8 +4,8 @@
         "right": new Point(1, 0),
         "left": new Point(-1, 0),
         "up": new Point(0, -1),
-        "down": new Point(0, 1),
-    }
+        "down": new Point(0, 1)
+    };
 
     function Ship(options){
         options = options || {};
@@ -31,6 +31,9 @@
             this.element.addClass(this.shipType);
             this.element.addClass(this.direction);
             return this.element;
+        },
+        setPosition: function(position){
+            this.currentPosition = position;
         },
         move: function(direction){
             var diff;

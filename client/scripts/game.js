@@ -1,32 +1,65 @@
 (function(global){
     
-    function Game(options){
-        options = options || {};
-        
-//        this.playersCount = options.PlayersCount || 2;
-        this.playersArray = [];
-        this.movePlayer = undefined;
-        this.moveTimestamp = undefined;
-        this.moveTimer = options.moveTimer || 20;
-        this.moveType = options.moveType || "choice";   // choice|cycle|random
-        this.board = undefined;
+    function Game(gameId, userId, opponentId){
+        this.gameId = gameId;
+        this.userId = userId;
+
+        this.board = new Board();
+        this.player = new Player({ isHero: true });
+        this.opponent = new Player();
+        this.arrangeShips();
     }
     
     Game.prototype = {
-        setBoard: function(board){
-            this.board=board;
-            if(board===undefined){
-                board.assignGame(this);
-            }
+        arrangeShips: function(){
+            this.player.arrangeShipsOnBoard(this.board, function(shipsConfig){
+                api.callUrl("saveShips", {
+                    gameId: this.gameId,
+                    userId: this.userId,
+                    shipsConfig: JSON.stringify({ships: shipsConfig})
+                }, function(data){
+                    that.loadOpponentShips();
+                });
+            });
         },
-        addPlayer: function(player){
-            player.game=this;
-            this.playersArray.push(player);
-//            if(player.game===undefined){
-////                player.setGame(this);
-//            }
+        loadOpponentShips: function(){
+            this.opponent.loadShipsFromServer(this.start.bind(this));;
         },
         start: function(){
+
+        },
+        checkStep: function(){
+            api.callUrl("checkStep", {
+                gameId: this.gameId,
+                userId: this.userId
+            }, function(data){
+                if(data.status=="ok") {
+
+                }
+
+            });
+        },
+        currentPlayerStep: function(){
+            var that = this;
+            this.activePlayer.makeStep(function(results){
+                if(this.isGameOver()){
+                    that.gameOver();
+                } else {
+                    that.nextPlayerStep();
+                }
+            });
+        },
+        nextPlayerStep: function(){
+            this.currentPlayerIndex++;
+
+            if(this.currentPlayerIndex>=this.players.length) {
+                this.currentPlayerIndex = 0;
+            }
+
+            this.activePlayer = this.players[this.currentPlayerIndex];
+            this.currentPlayerStep();
+        },
+        gameOver: function(){
             
         }
     };
