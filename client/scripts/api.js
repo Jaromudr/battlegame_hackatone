@@ -16,8 +16,15 @@
     }
 
     // Users
-    addUrl("login", "/user/login", "PUT");
-    addUrl("checkStep", "/game/{gameId}/checkStep/{userId}");
+    addUrl("join", "/user/join", "PUT");
+    
+    // Game
+    addUrl("gameStatus", "/game/{gameId}/status");
+    addUrl("loadUserShips", "/game/{gameId}/load-user-ships/{userId}");
+    addUrl("saveUserShips", "/game/{gameId}/save-user-ships/{userId}");
+    addUrl("isMyStep", "/game/{gameId}/is-my-step/{userId}"); // should return opponent actions
+    addUrl("saveUserActions", "/game/{gameId}/save-user-actions/{userId}");
+    addUrl("gameResults", "/game/{gameId}/results");
 
     function API(){}
 

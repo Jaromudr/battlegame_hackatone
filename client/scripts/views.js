@@ -10,13 +10,13 @@
             element = dom("div", [
                 this.errorSpan = dom(".error"),
                 this.nicknameInput =  dom("input", { placeholder: "superhero"}),
-                this.signInButton = dom(".button", "Join")
+                this.signInButton = dom("span.button", "Join")
             ]);
 
             app.appBody.appendChild(element);
 
-            this.signInButton.addEventListener(function(e){
-                api.callUrl("join", {
+            this.signInButton.addEventListener("click", function(e){
+                api.callURL("join", {
                     nickname: that.nicknameInput.value
                 }, function(data){
                     app.gameId = data.gameId;
@@ -32,12 +32,13 @@
             });
         },
         renderPendingPage: function(){
+            app.clearBody();
             var element = dom("div", [
                 dom("span", "waiting for partner...")
             ]);
 
             var interval = setInterval(function(){
-                api.callUrl("gameStatus", {
+                api.callURL("gameStatus", {
                     gameId: app.gameId
                 }, function(data){
                     if(data.status=="started") {

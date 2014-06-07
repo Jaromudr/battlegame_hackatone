@@ -1,6 +1,9 @@
 (function(global){
+    var game;
     
     function Game(gameId, userId, opponentId){
+        game = this;
+
         this.gameId = gameId;
         this.userId = userId;
 
@@ -13,7 +16,7 @@
     Game.prototype = {
         arrangeShips: function(){
             this.player.arrangeShipsOnBoard(this.board, function(shipsConfig){
-                api.callUrl("saveShips", {
+                api.callUrl("saveUserShips", {
                     gameId: this.gameId,
                     userId: this.userId,
                     shipsConfig: JSON.stringify({ships: shipsConfig})
@@ -23,46 +26,81 @@
             });
         },
         loadOpponentShips: function(){
-            this.opponent.loadShipsFromServer(this.start.bind(this));;
+            this.opponent.loadShipsFromServer(this.gameLoop.bind(this));;
         },
-        start: function(){
-
+        gameLoop: function(){
+            this.waitForMyStep(function(actions){
+                game.playOpponentStep(actions, function(){
+                    game.makeHeroStep(function(){
+                        if(game.isOver) {
+                            game.showGameOver();
+                        } else {
+                            game.gameLoop();
+                        }
+                    })
+                });
+            });
         },
-        checkStep: function(){
-            api.callUrl("checkStep", {
+        playOpponentStep: function(actions, callback){
+            if(actions.length) {
+                action.play(function(){
+                    game.playOpponentStep(actions.slice(1));
+                });
+            } else {
+                callback();
+            }
+        },
+        waitForMyStep: function(callback){
+            api.callURL("isMyStep", {
                 gameId: this.gameId,
                 userId: this.userId
             }, function(data){
-                if(data.status=="ok") {
-
-                }
-
-            });
-        },
-        currentPlayerStep: function(){
-            var that = this;
-            this.activePlayer.makeStep(function(results){
-                if(this.isGameOver()){
-                    that.gameOver();
+                if(data.anwer=="yes") {
+                    callback()
                 } else {
-                    that.nextPlayerStep();
+                    setTimeout(function(){
+                        game.waitForMyStep(callback);
+                    }, 500);
                 }
             });
         },
-        nextPlayerStep: function(){
-            this.currentPlayerIndex++;
-
-            if(this.currentPlayerIndex>=this.players.length) {
-                this.currentPlayerIndex = 0;
-            }
-
-            this.activePlayer = this.players[this.currentPlayerIndex];
-            this.currentPlayerStep();
+        makeHeroStep: function(callback){
+            this.player.makeSteps(function(actions){
+                api.callURL("saveUserActions", {
+                    actions: JSON.stringify(actions);
+                }, function(){
+                    callback();
+                });
+            });
         },
-        gameOver: function(){
-            
+        showGameOver: function(){
+            api.callURL("gameResults", {
+                gameId: this.gameId
+            }, function(data){
+                if(+data.winnerId === this.userId) {
+                    this.showVictory();
+                } else {
+                    this.showLoose();
+                }
+            })
+        },
+        showVictory: function(){
+            var element = dom(".victory", [
+                this.playAgainButton = dom(".button", "Play again");
+            ]);
+
+            app.appBody.appendChild(element);
+            this.playAgainButton.addEventListener(click, app.playAgain.bind(this));
+        },
+        showLoose: function(){
+            var element = dom(".loose", [
+                this.playAgainButton = dom(".button", "Play again");
+            ]);
+
+            app.appBody.appendChild(element);
+            this.playAgainButton.addEventListener(click, app.playAgain.bind(this));
         }
     };
     
-    global.Game=Game;
+    global.Game = Game;
 })(window);
