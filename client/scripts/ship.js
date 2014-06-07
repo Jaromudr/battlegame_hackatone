@@ -4,7 +4,7 @@
         "right": new Point(1, 0),
         "left": new Point(-1, 0),
         "up": new Point(0, -1),
-        "down": new Point(0, 1),
+        "down": new Point(0, 1)
     }
 
     function Ship(options){
