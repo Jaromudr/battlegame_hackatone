@@ -198,15 +198,6 @@ var augment = function(receivingClass, givingClass) {
 augment(NodeList,Array,'forEach');
 
 /**************************************************/
-var Point = function(x,y){
-    this.x=x;
-    this.y=y;    
-}
-Point.prototype={
-    toString:function(){
-        return '{x='+this.x+',y='+this.y+'}';
-    },
-}
 Math.getNearIndex=function(arr,val){
     var delta=Math.abs(arr[0]-val);
     var index=0;
