@@ -16,7 +16,7 @@
     }
 
     // Users
-    addUrl("join", "/user/join", "PUT");
+    addUrl("join", "/user/join", "POST");
     
     // Game
     addUrl("gameStatus", "/game/{gameId}/status");
