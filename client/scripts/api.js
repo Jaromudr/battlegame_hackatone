@@ -1,7 +1,9 @@
 (function(global) {
 
     var settings = {
-        baseURL: "http://quizj.ag.wap3.com.ua"
+        baseURL: "http://quizj.ag.wap3.com.ua",
+        cellSide: 20
+
     }
 
     settings.apiURL = settings.baseURL + "/api/";

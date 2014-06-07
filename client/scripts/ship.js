@@ -1,5 +1,12 @@
 (function(global){
 
+    var moveDiffPoints = {
+        "right": new Point(1, 0),
+        "left": new Point(-1, 0),
+        "up": new Point(0, -1),
+        "down": new Point(0, 1),
+    }
+
     function Ship(options){
         options = options || {};
 
@@ -9,6 +16,7 @@
         this.health = this.fullHealth;
         this.speed = options.speed||3;
         this.side = options.side||1;
+        this.size = new Point(this.side, this.side);
         this.visibleFarness = options.visibleFarness||1;
         this.currentPosition = options.currentPosition||new Point(0, 0);
 
@@ -29,12 +37,8 @@
                 this.direction = direction;
                 this.element.addClass(direction);
             }
-            diff = new Point(
-                (direction=="right")?1:((direction==="left")?-1:0),
-                (direction=="up")?-1:((direction==="down")?1:0)
-            );
 
-            this.currentPosition.add(diff);
+            this.currentPosition.add(moveDiffPoints[direction]);
             this.runMoveAnimation();
         },
         runMoveAnimation: function(){
@@ -46,6 +50,15 @@
                 this.currentPosition.sub(new Point(-this.visibleFarness, --this.visibleFarness)),
                 this.currentPosition.add(new Point(visibleSide, visibleSide))
             );
+        },
+        getRectangle: function(){
+            return new Rectangle(
+                this.currentPosition,
+                this.currentPosition.add(this.size)
+            )
+        },
+        catchPoint: function(point){
+            return this.getRectangle().includePoint(point);
         }
     }
 
