@@ -19,6 +19,8 @@
         this.size = new Point(this.side, this.side);
         this.visibleFarness = options.visibleFarness||1;
         this.currentPosition = options.currentPosition||new Point(0, 0);
+        
+        this.player=undefined;
 
         this.render();
     }
@@ -59,8 +61,12 @@
         },
         catchPoint: function(point){
             return this.getRectangle().includePoint(point);
+        },
+        setPlayer: function(player){
+            this.player=player;
+            player.shipsArray.push(this);
         }
-    }
+    };
 
     global.Ship = Ship;
 
