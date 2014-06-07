@@ -23,7 +23,7 @@
         },
         loadShipsFromServer: function(gameId, userId, callback){
             var that = this;
-            api.callUrl("loadUserShips", {
+            api.callURL("loadUserShips", {
                 gameId: gameId,
                 userId: userId
             }, function(data){
@@ -32,7 +32,6 @@
                     that.ships.push(ship);
                     board.putShip();
                 });
-                
             });
 
         },
