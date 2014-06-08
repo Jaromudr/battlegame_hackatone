@@ -19,7 +19,8 @@
     addUrl("join", "user/join");
     
     // Game
-    addUrl("gameStatus", "game/{gameId}/status");
+    addUrl("gameStatus", "game/status");
+
     addUrl("loadUserShips", "game/{gameId}/load-user-ships/{userId}");
     addUrl("saveUserShips", "game/{gameId}/save-user-ships/{userId}");
     addUrl("isMyStep", "game/{gameId}/is-my-step/{userId}"); // should return opponent actions

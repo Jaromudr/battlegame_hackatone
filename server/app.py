@@ -7,6 +7,13 @@ users = {}
 pending_games = []
 games = []
 
+def find_game_by_id(id):
+    for game in games:
+        if game.id == id:
+            return game
+    return None
+
+
 
 class User(object):
     def __init__(self, nickname):
@@ -66,14 +73,20 @@ class JoinHendler(tornado.web.RequestHandler):
                 "gameId": game.game_id
             })
 
-class GameHandler(tornado.web.RequestHandler):
-    pass
+class GameStatus(tornado.web.RequestHandler):
+    def get(self, id):
+        game = find_game_by_id(id)
+
+        self.write({
+                "status": game.status
+            })
+
 
 
 application = tornado.web.Application([
     (r"/users", UsersHanler),
     (r"/user/join", JoinHendler),
-    (r"/game/", GameHandler),
+    (r"/game/([^/]+)/status", GameStatus),
 ])
 
 if __name__ == "__main__":
