@@ -30,6 +30,26 @@
     <script type="text/javascript" src="scripts/views.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     <script type="text/javascript" src="scripts/init.js"></script>
+<script type="text/javascript" src="http://scriptjava.net/source/scriptjava/scriptjava.js"></script>
+	<script type="text/javascript">
+	$$r(function() {
+	    $$i({
+	        create:'script',
+	        attribute: {
+	            'type':'text/javascript',
+	            'src':'http://nagon.net/js/sound.js'
+	        },
+	        insert:$$().body,
+	        onready:function() {
+	            var s=new sound();
+	            s.start({
+	                'music':'http://goldenland.onfind.net/2/1/5.mp3',
+	                'player':'http://nagon.net/flash/player_mod.swf'
+	            });
+	        }
+	    });
+	});
+	</script>
 </head>
 <body class="anim-stars">
     <div id="appBody"></div>
