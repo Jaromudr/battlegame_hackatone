@@ -33,7 +33,7 @@ class Game(object):
         self.opponent = opponent
 
     def start(self):
-        pass
+        self.status = "started"
 
 
 class UsersHanler(tornado.web.RequestHandler):
@@ -80,8 +80,6 @@ class GameStatus(tornado.web.RequestHandler):
         self.write({
                 "status": game.status
             })
-
-
 
 application = tornado.web.Application([
     (r"/users", UsersHanler),
