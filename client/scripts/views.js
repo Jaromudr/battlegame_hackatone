@@ -41,7 +41,7 @@
                 api.callURL("gameStatus", {
                     gameId: app.gameId
                 }, function(data){
-                    if(data.status=="started") {
+                    if(data.status == "started") {
                         clearInterval(interval);
                         app.joinToGame(app.gameId);
                     }

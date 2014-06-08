@@ -85,7 +85,7 @@ application = tornado.web.Application([
     (r"/users", UsersHanler),
     (r"/user/join", JoinHendler),
     (r"/game/([^/]+)/status", GameStatus),
-])
+], debug=True)
 
 if __name__ == "__main__":
     application.listen(8888)
