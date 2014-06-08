@@ -14,6 +14,9 @@
     }
     
     Game.prototype = {
+        play: function(){
+            this.gameLoop();
+        }
         arrangeShips: function(){
             this.player.arrangeShipsOnBoard(this.board, function(shipsConfig){
                 api.callUrl("saveUserShips", {
