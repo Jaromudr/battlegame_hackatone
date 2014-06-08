@@ -10,10 +10,12 @@
     function Ship(options){
         options = options || {};
 
-        this.shipType = options.shipType||"single";
+        this.shipType = options.shipType||"hunter";
         this.direction = options.direction||"right";
         this.fullHealth = options.fullHealth||100;
         this.health = this.fullHealth;
+        this.armor = options.armor||0;
+        this.damage = options.damage||1;
         this.speed = options.speed||3;
         this.side = options.side||1;
         this.size = new Point(this.side, this.side);
@@ -28,8 +30,12 @@
     Ship.prototype = {
         render: function(){
             this.element = dom(".ship");
-            this.element.addClass(this.shipType);
+            this.element.addClass("ship-" + this.shipType);
+            this.element.addClass("ship-red");
             this.element.addClass(this.direction);
+
+            this.element.style.height = settings.boardSide + "px";
+            this.element.style.width = settings.boardSide + "px";
             return this.element;
         },
         setPosition: function(position){

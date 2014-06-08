@@ -2,8 +2,8 @@
 
     var settings = {
         baseURL: "http://127.0.0.1:8888",
-        cellSide: 20
-
+        cellSide: 20,
+        boardSide: 50
     }
 
     settings.apiURL = settings.baseURL + "/";
@@ -55,7 +55,8 @@
             $.ajax({
                 type: method,
                 url: url,
-                data: data//JSON.stringify(data)
+                data: data,
+                crossDomain: true//JSON.stringify(data)
             }).done(callback).fail(failCallback);
         }
     }

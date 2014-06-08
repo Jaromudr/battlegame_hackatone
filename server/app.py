@@ -53,13 +53,17 @@ class Game(object):
     def start(self):
         self.status = "started"
 
+class BaseHandler(tornado.web.RequestHandler):
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
 
-class UsersHandler(tornado.web.RequestHandler):
+
+class UsersHandler(BaseHandler):
     def get(self):
         self.write(json.dumps(users))
 
 
-class JoinHandler(tornado.web.RequestHandler):
+class JoinHandler(BaseHandler):
     def post(self):
         nickname = self.get_argument("nickname", None)
 
@@ -93,7 +97,7 @@ class JoinHandler(tornado.web.RequestHandler):
                 "opponentId": game.get_opponent_id(user.user_id)
             })
 
-class GameStatusHandler(tornado.web.RequestHandler):
+class GameStatusHandler(BaseHandler):
     def get(self, id):
         game = find_game_by_id(id)
 
@@ -103,7 +107,7 @@ class GameStatusHandler(tornado.web.RequestHandler):
                 "opponentId": game.get_opponent_id(game.hero.user_id)
             })
 
-class IsMyStepHandler(tornado.web.RequestHandler):
+class IsMyStepHandler(BaseHandler):
     def get(self, game_id, user_id):
         game = find_game_by_id(game_id)
         is_my_step = "no"

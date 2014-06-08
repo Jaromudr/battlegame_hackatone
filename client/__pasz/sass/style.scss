@@ -1,0 +1,123 @@
+$brand-colour: #822733;
+$brand2-colour: red;
+$fon-colour: black;
+
+body{
+margin:0px;
+   background: url('../images/spaice.png') repeat scroll 0% 0% transparent;
+    width: 100%;
+    height: 100%;
+}
+
+div{}
+.box {
+ 
+}
+.smallSector {
+    background: url('../images/mesh.png') repeat scroll 0% 0% / 20px auto transparent;
+    width: 400px;
+    height: 400px;
+    float: left;
+}
+.smallSector2 {
+    background: url('../images/mesh.png') repeat scroll 0% 0% / 20px auto transparent;
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin-top: 0px;
+}
+
+.bigSector1 {
+    padding-top: 139px;
+    padding-left: 242px;
+}
+
+.life1{
+    background: url('../images/spaice.png') repeat scroll 0% 0% transparent;
+    width: 1069px;
+    height: 584px;
+}
+
+.generator {
+    width: 400px;
+    margin-top: -388px;
+    margin-left: 454px;
+    border-radius: 1%;
+    height: 103px;
+    background: none repeat scroll 0% 0% #FFF;
+    box-shadow: 0px 0px 167px 181px #FFF;
+}
+
+.zasvet{
+position:absolute;
+margin-left:10px;
+margin-top:10px;
+background:#18192f;
+width:20px;
+height:20px;
+
+}
+
+.star {
+    background: url('../images/star1.png') repeat scroll 0% 0% transparent;
+    width: 100%;
+    height: 200%;
+    margin-left: 49px;
+    position: absolute;
+    background-position: 10px;
+	}
+	
+.star2 {
+    background: url('../images/star2.png') repeat scroll 0% 0% transparent;
+    width: 100%;
+    height: 200%;
+    margin-left: 49px;
+    position: absolute;
+    background-position: 10px;
+	
+}
+.lifeFirst {
+    width: 570px;
+    height: 21px;
+    background: url('../images/line.png') repeat scroll 0% 0% transparent;
+    position: absolute;
+    margin-left: 393px;
+    margin-top: -385px;
+    border: 1px solid #FFF;
+}
+
+.lifeSecond {
+    width: 570px;
+    height: 21px;
+    background: url('../images/line.png') repeat scroll 0% 0% transparent;
+    position: absolute;
+    margin-left: 393px;
+    margin-top: -351px;
+    border: 1px solid #FFF;
+}
+
+
+.lifes{
+position:absolute;
+margin-left:0px;
+margin-top:0px;
+
+}
+
+img{}
+
+
+.spcor2 {
+    position: absolute;
+    margin-left: 161px;
+    margin-top: 32px;
+    width: 207px;
+    height: auto;
+}
+
+canvas{
+  position: absolute;
+  top     : 0px;
+  left    : 0px;
+  z-index : 100;
+}

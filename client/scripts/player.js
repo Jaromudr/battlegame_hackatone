@@ -38,11 +38,10 @@
 
         },
         shipsMaster: function(){
-            this.ships.push(shipTypes.singleShip());
-            this.ships.push(shipTypes.secondSingleShip());
-            this.ships.push(shipTypes.thirdSingleShip());
-            this.ships.push(shipTypes.bigShip());
-        },
+            this.ships.push(shipTypes.shipHunter());
+            this.ships.push(shipTypes.shipFalcon());
+            this.ships.push(shipTypes.shipFalcon());
+        }
 
     };
     

@@ -8,10 +8,14 @@
             app.clearBody();
 
             element = dom("div", [
+                dom('.page-login-ship'),
+                dom('h1', 'Space Battle'),
                 this.errorSpan = dom(".error"),
                 this.nicknameInput =  dom("input", { placeholder: "superhero"}),
                 this.signInButton = dom("span.button", "Join")
             ]);
+
+            element.addClass('page-login');
 
             app.appBody.appendChild(element);
 

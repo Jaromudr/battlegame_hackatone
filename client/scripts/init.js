@@ -2,7 +2,8 @@
 
     window.addEventListener('load',function(){
         global.app = new App();
-        app.renderLoginPage();
+        // app.renderLoginPage();
+        app.joinToGame();
     },false);
 
 })(window);

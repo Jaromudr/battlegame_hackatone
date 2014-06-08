@@ -1,0 +1,44 @@
+$cell-side:32px;
+
+.ship {
+    display:block;
+    background-position: 50% 50%;
+    background-size: 100%;
+}
+
+.ship-size-2 {
+    width:$cell-side*2+1px;
+    height:$cell-side*2+1px;
+}
+
+.ship-size-3 {
+    width:$cell-side*3+2px;
+    height:$cell-side*3+2px;
+}
+
+.ship-falcon {
+    &.ship-red {
+        background-image:url(../img/Falcon_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Falcon_blue.png);
+    }
+}
+
+.ship-python {
+    &.ship-red {
+        background-image:url(../img/Python_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Python_blue.png);
+    }
+}
+
+.ship-falcon {
+    &.ship-red {
+        background-image:url(../img/Hunter_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Hunter_blue.png);
+    }
+}

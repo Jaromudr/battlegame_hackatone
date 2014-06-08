@@ -10,12 +10,28 @@
         this.board = new Board();
         this.player = new Player({ isHero: true });
         this.opponent = new Player();
-        this.arrangeShips();
+        // this.arrangeShips();
+        this.arrangeShipsLocal();
     }
     
     Game.prototype = {
+        render: function(){
+            app.clearBody();
+
+            this.element = dom(".game-wrapper", [
+                dom(".game-status"),
+                this.board.element,
+                dom(".game-tools")
+            ]);
+
+            app.appBody.appendChild(this.element);
+        },
         play: function(){
-            this.gameLoop();
+            // this.gameLoop();
+            this.render();
+        },
+        arrangeShipsLocal: function(){
+            this.player.arrangeShipsOnBoard(this.board);
         },
         arrangeShips: function(){
             this.player.arrangeShipsOnBoard(this.board, function(shipsConfig){
