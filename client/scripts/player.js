@@ -5,7 +5,9 @@
 
         this.isHero = !!options.isHero;
 
-        this.ships = this.shipsMaster();
+        this.ships = [];
+        this.shipsMaster();
+
         this.isHero && this.shipsMaster();
     }
     
@@ -36,10 +38,10 @@
 
         },
         shipsMaster: function(){
-            this.ships.push(this.shipTypes.singleShip());
-            this.ships.push(this.shipTypes.secondSingleShip());
-            this.ships.push(this.shipTypes.thirdSingleShip());
-            this.ships.push(this.shipTypes.bigShip());
+            this.ships.push(shipTypes.singleShip());
+            this.ships.push(shipTypes.secondSingleShip());
+            this.ships.push(shipTypes.thirdSingleShip());
+            this.ships.push(shipTypes.bigShip());
         },
 
     };

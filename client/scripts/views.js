@@ -20,14 +20,15 @@
                     nickname: that.nicknameInput.value
                 }, function(data){
                     app.gameId = data.gameId;
+                    app.userId = data.userId;
 
                     if(data.status == "started") {
-                        app.joinToGame(gameId);
+                        app.joinToGame(app.gameId, data.opponentId, data.userId);
                     } else {
                         app.renderPendingPage();
                     }
                 }, function(XMLHttpRequest, textStatus, errorThrown){
-                    this.errorsArea.innerText = XMLHttpRequest.responseJSON.message;
+                    that.errorSpan.innerText = "User with such nick already online";
                 });
             });
         },
@@ -43,7 +44,8 @@
                 }, function(data){
                     if(data.status == "started") {
                         clearInterval(interval);
-                        app.joinToGame(app.gameId);
+
+                        app.joinToGame(app.gameId, app.userId, (+data.userId==app.userId)?data.opponentId:dataUserId);
                     }
                 })
             }, 500);

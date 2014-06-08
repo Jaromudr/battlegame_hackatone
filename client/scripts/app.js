@@ -10,8 +10,8 @@
     	clearBody: function(){
     		this.appBody.innerHTML = "";
     	},
-        joinToGame: function(gameId){
-            this.game = new Game(gameId);
+        joinToGame: function(gameId, userId, opponentId){
+            this.game = new Game(gameId, userId, opponentId);
             this.game.play();
         }
     }

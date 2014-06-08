@@ -16,7 +16,7 @@
     Game.prototype = {
         play: function(){
             this.gameLoop();
-        }
+        },
         arrangeShips: function(){
             this.player.arrangeShipsOnBoard(this.board, function(shipsConfig){
                 api.callUrl("saveUserShips", {
@@ -59,7 +59,7 @@
                 userId: this.userId
             }, function(data){
                 if(data.anwer=="yes") {
-                    callback()
+                    callback(data.actions)
                 } else {
                     setTimeout(function(){
                         game.waitForMyStep(callback);
@@ -70,7 +70,7 @@
         makeHeroStep: function(callback){
             this.player.makeSteps(function(actions){
                 api.callURL("saveUserActions", {
-                    actions: JSON.stringify(actions);
+                    actions: JSON.stringify(actions)
                 }, function(){
                     callback();
                 });
@@ -89,7 +89,7 @@
         },
         showVictory: function(){
             var element = dom(".victory", [
-                this.playAgainButton = dom(".button", "Play again");
+                this.playAgainButton = dom(".button", "Play again")
             ]);
 
             app.appBody.appendChild(element);
@@ -97,7 +97,7 @@
         },
         showLoose: function(){
             var element = dom(".loose", [
-                this.playAgainButton = dom(".button", "Play again");
+                this.playAgainButton = dom(".button", "Play again")
             ]);
 
             app.appBody.appendChild(element);

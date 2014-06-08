@@ -8,6 +8,7 @@
         this.boardHeight = options.boardHeight || 20;
         
         this.ships = [];
+        this.render();
     }
     
     Board.prototype = {
@@ -17,7 +18,7 @@
         },
         putShip: function(ship){
             this.ships.push(ship);
-            board.appendChild(ship.element);
+            this.element.appendChild(ship.element);
         }
 
     };

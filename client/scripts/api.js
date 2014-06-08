@@ -19,13 +19,14 @@
     addUrl("join", "user/join");
     
     // Game
-    addUrl("gameStatus", "game/status");
+    addUrl("gameStatus", "game/{gameId}/status", "GET");
+    addUrl("isMyStep", "game/{gameId}/is-my-step/{userId}", "GET"); // should return opponent actions
 
-    addUrl("loadUserShips", "game/{gameId}/load-user-ships/{userId}");
+    addUrl("loadUserShips", "game/{gameId}/load-user-ships/{userId}", "GET");
     addUrl("saveUserShips", "game/{gameId}/save-user-ships/{userId}");
-    addUrl("isMyStep", "game/{gameId}/is-my-step/{userId}"); // should return opponent actions
+
     addUrl("saveUserActions", "game/{gameId}/save-user-actions/{userId}");
-    addUrl("gameResults", "game/{gameId}/results");
+    addUrl("gameResults", "game/{gameId}/results", "GET");
 
     function API(){}
 
