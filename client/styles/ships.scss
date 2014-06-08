@@ -17,5 +17,28 @@ $cell-side:32px;
 }
 
 .ship-falcon {
-    
+    &.ship-red {
+        background-image:url(../img/Falcon_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Falcon_blue.png);
+    }
+}
+
+.ship-python {
+    &.ship-red {
+        background-image:url(../img/Python_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Python_blue.png);
+    }
+}
+
+.ship-falcon {
+    &.ship-red {
+        background-image:url(../img/Hunter_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Hunter_blue.png);
+    }
 }

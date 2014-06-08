@@ -14,6 +14,8 @@
         this.direction = options.direction||"right";
         this.fullHealth = options.fullHealth||100;
         this.health = this.fullHealth;
+        this.armor = options.armor||0;
+        this.damage = options.damage||1;
         this.speed = options.speed||3;
         this.side = options.side||1;
         this.size = new Point(this.side, this.side);

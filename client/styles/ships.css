@@ -11,4 +11,19 @@
   width: 98px;
   height: 98px; }
 
+.ship-falcon.ship-red {
+  background-image: url(../img/Falcon_red.png); }
+.ship-falcon.ship-blue {
+  background-image: url(../img/Falcon_blue.png); }
+
+.ship-python.ship-red {
+  background-image: url(../img/Python_red.png); }
+.ship-python.ship-blue {
+  background-image: url(../img/Python_blue.png); }
+
+.ship-falcon.ship-red {
+  background-image: url(../img/Hunter_red.png); }
+.ship-falcon.ship-blue {
+  background-image: url(../img/Hunter_blue.png); }
+
 /*# sourceMappingURL=ships.css.map */
