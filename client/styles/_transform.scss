@@ -1,0 +1,19 @@
+@mixin transform($trans){
+    -webkit-transform:$trans;
+    -moz-transform:$trans;
+    -o-transform:$trans;
+    -ms-transform:$trans;
+    transform:$trans;
+}
+
+@mixin rotate($rot){
+    @include transform(rotate($rot));
+}
+
+@mixin transition-transform($amount-of-time){
+    -webkit-transition: -webkit-transform $amount-of-time;
+    -moz-transition:    -moz-transform $amount-of-time;
+    -o-transition:      -o-transform $amount-of-time;
+    -ms-transition:     -ms-transform $amount-of-time;
+    transition:         transform $amount-of-time;
+}

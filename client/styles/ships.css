@@ -1,7 +1,12 @@
 .ship {
   display: block;
   background-position: 50% 50%;
-  background-size: 100%; }
+  background-size: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  -ms-transition: -ms-transform 1s;
+  transition: transform 1s; }
 
 .ship-size-2 {
   width: 65px;
@@ -10,6 +15,10 @@
 .ship-size-3 {
   width: 98px;
   height: 98px; }
+
+.ship-size-4 {
+  width: 131px;
+  height: 131px; }
 
 .ship-falcon.ship-red {
   background-image: url(../img/Falcon_red.png); }
@@ -25,5 +34,33 @@
   background-image: url(../img/Hunter_red.png); }
 .ship-falcon.ship-blue {
   background-image: url(../img/Hunter_blue.png); }
+
+.ship-top {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg); }
+
+.ship-right {
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg); }
+
+.ship-bottom {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.ship-left {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg); }
 
 /*# sourceMappingURL=ships.css.map */

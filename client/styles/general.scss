@@ -62,25 +62,27 @@ $ship-anim-time:10s;
     display:block;
     width:733px;
     height:695px;
-    background:url(../img/plane_s.png) no-repeat 50% 50% transparent;
+    background:url(../img/plane_s_small.png) no-repeat 50% 50% transparent;
     position:absolute;
     bottom:150%;
     left:-30%;
-    margin-bottom: -280px;
-    margin-left: -750px;
+    margin-bottom: -125px;
+    margin-left: -500px;
     @include animation (anim-ship $ship-anim-time infinite linear);
+    width:400px;
+    height:379px;
     
     &:after {
         position:absolute;
         display:block;
         content:'';
-        height:107px;
+        height:79px;
         background-position: 0 50%;
         background-repeat: repeat;
-        background-image: url(../img/laser.png);
+        background-image: url(../img/laser_small.png);
         width: 100%;
-        left: 637px;
-        top: 291px;
+        left: 362px;
+        top: 148px;
         width:300%;
         @include animation (anim-ship-laser $ship-anim-time infinite linear);
     }
