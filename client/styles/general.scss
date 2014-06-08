@@ -37,6 +37,7 @@ h1 {
         color:#FFF;
         font-family:Arial,sans-serif;
         font-size:25px;
+        cursor:pointer;
     }
 
     input {
@@ -86,6 +87,15 @@ $ship-anim-time:10s;
         width:300%;
         @include animation (anim-ship-laser $ship-anim-time infinite linear);
     }
+}
+
+.page-waiting-text {
+    text-align:center;
+    color:#FFF;
+    font-family: Arial,sans-serif;
+    font-size:20px;
+    font-weight:bold;
+    display:block;
 }
 
 @include keyframes(anim-ship){

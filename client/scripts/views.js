@@ -38,8 +38,9 @@
         },
         renderPendingPage: function(){
             app.clearBody();
-            var element = dom("div", [
-                dom("span", "waiting for partner...")
+            var element = dom("div.page-waiting", [
+                dom('.anim-ufo-steals-cow'),
+                dom("span.page-waiting-text", "Waiting for partner...")
             ]);
 
             var interval = setInterval(function(){

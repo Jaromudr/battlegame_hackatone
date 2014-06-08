@@ -2,7 +2,7 @@
 
     window.addEventListener('load',function(){
         global.app = new App();
-        app.renderLoginPage();
+        app.renderPendingPage();
     },false);
 
 })(window);

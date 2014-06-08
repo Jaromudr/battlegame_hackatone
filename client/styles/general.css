@@ -29,7 +29,8 @@ h1 {
     background: #2B366E;
     color: #FFF;
     font-family: Arial,sans-serif;
-    font-size: 25px; }
+    font-size: 25px;
+    cursor: pointer; }
   .page-login input {
     width: 190px;
     height: 50px;
@@ -79,6 +80,14 @@ h1 {
     -o-animation: anim-ship-laser 10s infinite linear;
     -ms-animation: anim-ship-laser 10s infinite linear;
     animation: anim-ship-laser 10s infinite linear; }
+
+.page-waiting-text {
+  text-align: center;
+  color: #FFF;
+  font-family: Arial,sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  display: block; }
 
 @-webkit-keyframes anim-ship {
   0%,10% {

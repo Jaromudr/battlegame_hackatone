@@ -26,9 +26,47 @@ $stars-height:1008px;
     @include animation (stars $stars-time infinite linear);
 }
 
+$cow-time:2s;
+$ufo-width:446px;
+$cow-width:28px;
+$cow-height:35px;
+$ufo-height:313px;
+$ray-height:144px;
+
+.anim-ufo-steals-cow {
+    width:$ufo-width;
+    height:$ufo-height;
+    margin:0 auto;
+    position:relative;
+    display:block;
+    background:url(../img/UFO.png) 50% 50% transparent no-repeat;
+}
+
+.anim-ufo-steals-cow:before {
+    content:'';
+    position:absolute;
+    left:($ufo-width - $cow-width)/2;
+    right:($ufo-width - $cow-width)/2;
+    bottom:0;
+    display:block;
+    width:$cow-width;
+    height:$ray-height;
+    background-image:url(../img/cow.png);
+    background-color:transparent;
+    background-position:50% ($ray-height - $cow-height);
+    background-repeat:no-repeat;
+    overflow:hidden;
+    @include animation (cow $cow-time infinite linear);
+}
+
 @include keyframes(boom){
     from { background-position:0px 50%; }
     to { background-position:-($boom-width)*($boom-steps) 50%; }
+}
+
+@include keyframes(cow){
+    0% { background-position: 50% ($ray-height - $cow-height); }
+    70%,100% { background-position: 50% (-$cow-height); }
 }
 
 @include keyframes(stars){
