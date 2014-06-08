@@ -3,11 +3,11 @@
   height: 65px;
   display: block;
   background-image: url(../img/boom.png);
-  -webkit-animation: boom 1s steps(9) infinite;
-  -moz-animation: boom 1s steps(9) infinite;
-  -o-animation: boom 1s steps(9) infinite;
-  -ms-animation: boom 1s steps(9) infinite;
-  animation: boom 1s steps(9) infinite; }
+  -webkit-animation: boom 1s steps(9) infinite forwards;
+  -moz-animation: boom 1s steps(9) infinite forwards;
+  -o-animation: boom 1s steps(9) infinite forwards;
+  -ms-animation: boom 1s steps(9) infinite forwards;
+  animation: boom 1s steps(9) infinite forwards; }
 
 .anim-stars {
   /*background-image: url(../img/star1.png),url(../img/star2.png),url(../img/star3.png),url(../img/star4.png);*/
@@ -15,11 +15,11 @@
   background-position: 0% 0%, 0% 0%;
   background-repeat: repeat,repeat;
   background-color: #17192E;
-  -webkit-animation: stars 1800s infinite linear;
-  -moz-animation: stars 1800s infinite linear;
-  -o-animation: stars 1800s infinite linear;
-  -ms-animation: stars 1800s infinite linear;
-  animation: stars 1800s infinite linear; }
+  -webkit-animation: stars 210s infinite linear;
+  -moz-animation: stars 210s infinite linear;
+  -o-animation: stars 210s infinite linear;
+  -ms-animation: stars 210s infinite linear;
+  animation: stars 210s infinite linear; }
 
 @-webkit-keyframes boom {
   from {

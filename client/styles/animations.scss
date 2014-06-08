@@ -9,10 +9,11 @@ $boom-time:1s;
     height: 65px;
     display: block;
     background-image: url(../img/boom.png);
-    @include animation (boom $boom-time steps($boom-steps) infinite);
+    @include animation (boom $boom-time steps($boom-steps) infinite forwards);
 }
 
 $stars-time:1800s;
+$stars-time:210s;
 $stars-width:956px;
 $stars-height:1008px;
 
