@@ -76,13 +76,13 @@ $ship-anim-time:10s;
         position:absolute;
         display:block;
         content:'';
-        height:79px;
+        height:35px;
         background-position: 0 50%;
         background-repeat: repeat;
-        background-image: url(../img/laser_small.png);
+        background-image: url(../img/laser_small2.png);
         width: 100%;
         left: 362px;
-        top: 148px;
+        top: 173px;
         width:300%;
         @include animation (anim-ship-laser $ship-anim-time infinite linear);
     }

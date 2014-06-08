@@ -9,7 +9,7 @@
 
             element = dom("div", [
                 this.ship = dom('.page-login-ship'),
-                this.h1 = dom('h1', 'Space Battle'),
+                this.h1 = dom('h1', '<img src="./img/Space-battle.png" alt="Space Battle" height="40" />'),
                 this.errorSpan = dom(".error"),
                 this.nicknameInput =  dom("input", { placeholder: "superhero"}),
                 this.signInButton = dom("span.button", "Join")
