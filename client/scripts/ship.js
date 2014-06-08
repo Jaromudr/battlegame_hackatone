@@ -10,8 +10,8 @@
         "left": 0,
         "right": 180,
         "up": -90,
-        "donw": 90
-    }
+        "down": 90
+    };
 
     function Ship(options){
         options = options || {};
@@ -54,7 +54,7 @@
             angle = rotateDirections[direction];
             this.rotate(angle);
 
-            this.currentPosition.add(moveDiffPoints[direction]);
+            this.currentPosition = this.currentPosition.add(moveDiffPoints[direction]);
             this.runMoveAnimation();
 
         },
