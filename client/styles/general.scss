@@ -1,0 +1,141 @@
+@import '_animation';
+
+body {
+    overflow:hidden;
+}
+
+h1 {
+    color:#FFF;
+    font-size:30px;
+    font-family: Arial,sans-serif;
+}
+
+.page-login {
+    overflow:hidden;
+    
+    h1 {
+        position:absolute;
+        top:50%;
+        margin-top:-175px;
+        text-align: center;
+        width:100%;
+    }
+    
+    .button {
+        width:100px;
+        height:50px;
+        right:50%;
+        top:50%;
+        margin-top:-25px;
+        margin-right:-150px;
+        position:absolute;
+        line-height:50px;
+        border:none;
+        outline:none;
+        text-align:center;
+        background:#2B366E;
+        color:#FFF;
+        font-family:Arial,sans-serif;
+        font-size:25px;
+    }
+
+    input {
+        width:190px;
+        height:50px;
+        left:50%;
+        top:50%;
+        margin-top:-25px;
+        margin-left:-150px;
+        position:absolute;
+        line-height:50px;
+        border:none;
+        outline:none;
+        padding:0 5px;
+        font-family:Arial,sans-serif;
+        font-size:25px;
+    }
+}
+
+$ship-anim-time:10s;
+
+.page-login-ship {
+    display:block;
+    width:733px;
+    height:695px;
+    background:url(../img/plane_s_small.png) no-repeat 50% 50% transparent;
+    position:absolute;
+    bottom:150%;
+    left:-30%;
+    margin-bottom: -125px;
+    margin-left: -500px;
+    @include animation (anim-ship $ship-anim-time infinite linear);
+    width:400px;
+    height:379px;
+    
+    &:after {
+        position:absolute;
+        display:block;
+        content:'';
+        height:35px;
+        background-position: 0 50%;
+        background-repeat: repeat;
+        background-image: url(../img/laser_small2.png);
+        width: 100%;
+        left: 362px;
+        top: 173px;
+        width:300%;
+        @include animation (anim-ship-laser $ship-anim-time infinite linear);
+    }
+}
+
+@include keyframes(anim-ship){
+    0%,10% {
+        left:-30%;
+        bottom:150%;
+    }
+/*    16% {
+        left:-14%;
+        bottom:130%;
+    }
+    22% {
+        left:2%;
+        bottom:110%;
+    }
+    28% {
+        left:18%;
+        bottom:90%;
+    }
+    34% {
+        left:34%;
+        bottom:70%;
+    }*/
+    40%,60% {
+        left:50%;
+        bottom:50%;
+    }
+    90%,100% {
+        left:130%;
+        bottom:150%;
+    }
+}
+
+@include keyframes(anim-ship-laser){
+    0%,40%,60%,100% {
+        opacity:0;
+    }
+    43%,45% {
+        opacity:1;
+    }
+    46%,48% {
+        opacity:0;
+    }
+    49%,51% {
+        opacity:1;
+    }
+    52%,54% {
+        opacity:0;
+    }
+    55%,57% {
+        opacity:1;
+    }
+}

@@ -1,0 +1,67 @@
+@import '_transform';
+
+$cell-side:32px;
+
+.ship {
+    display:block;
+    background-position: 50% 50%;
+    background-size: 100%;
+    @include transition-transform(1s);
+}
+
+.ship-size-2 {
+    width:$cell-side*2+1px;
+    height:$cell-side*2+1px;
+}
+
+.ship-size-3 {
+    width:$cell-side*3+2px;
+    height:$cell-side*3+2px;
+}
+
+.ship-size-4 {
+    width:$cell-side*4+3px;
+    height:$cell-side*4+3px;
+}
+
+.ship-falcon {
+    &.ship-red {
+        background-image:url(../img/Falcon_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Falcon_blue.png);
+    }
+}
+
+.ship-python {
+    &.ship-red {
+        background-image:url(../img/Python_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Python_blue.png);
+    }
+}
+
+.ship-falcon {
+    &.ship-red {
+        background-image:url(../img/Hunter_red.png);
+    }
+    &.ship-blue {
+        background-image:url(../img/Hunter_blue.png);
+    }
+}
+
+
+
+.ship-top {
+    @include rotate(0deg);
+}
+.ship-right {
+    @include rotate(90deg);
+}
+.ship-bottom {
+    @include rotate(180deg);
+}
+.ship-left {
+    @include rotate(270deg);
+}

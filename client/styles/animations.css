@@ -1,0 +1,220 @@
+.anim-boom {
+  width: 81px;
+  height: 65px;
+  display: block;
+  background-image: url(../img/boom.png);
+  -webkit-animation: boom 1s steps(9) infinite forwards;
+  -moz-animation: boom 1s steps(9) infinite forwards;
+  -o-animation: boom 1s steps(9) infinite forwards;
+  -ms-animation: boom 1s steps(9) infinite forwards;
+  animation: boom 1s steps(9) infinite forwards; }
+
+.anim-stars {
+  /*background-image: url(../img/star1.png),url(../img/star2.png),url(../img/star3.png),url(../img/star4.png);*/
+  background-image: url(../img/star1.png), url(../img/star2.png);
+  background-position: 0% 0%, 0% 0%;
+  background-repeat: repeat,repeat;
+  background-color: #17192E;
+  -webkit-animation: stars 210s infinite linear;
+  -moz-animation: stars 210s infinite linear;
+  -o-animation: stars 210s infinite linear;
+  -ms-animation: stars 210s infinite linear;
+  animation: stars 210s infinite linear; }
+
+@-webkit-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-moz-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-ms-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-o-keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@keyframes boom {
+  from {
+    background-position: 0px 50%; }
+
+  to {
+    background-position: -729px 50%; } }
+@-webkit-keyframes stars {
+  0% {
+    background-position: 0px 0px, 0px 0px; }
+
+  10% {
+    background-position: 95.6px 100.8px, 95.6px 100.8px; }
+
+  20% {
+    background-position: 191.2px 0px, 239px 100.8px; }
+
+  30% {
+    background-position: 95.6px 302.4px, 143.4px 201.6px; }
+
+  40% {
+    background-position: 95.6px 504px, 191.2px 302.4px; }
+
+  50% {
+    background-position: 191.2px 655.2px, 286.8px 403.2px; }
+
+  60% {
+    background-position: 286.8px 604.8px, 286.8px 604.8px; }
+
+  70% {
+    background-position: 478px 604.8px, 382.4px 705.6px; }
+
+  80% {
+    background-position: 669.2px 806.4px, 573.6px 806.4px; }
+
+  90% {
+    background-position: 860.4px 907.2px, 764.8px 907.2px; }
+
+  100% {
+    background-position: 956px 1008px, 956px 1008px; } }
+@-moz-keyframes stars {
+  0% {
+    background-position: 0px 0px, 0px 0px; }
+
+  10% {
+    background-position: 95.6px 100.8px, 95.6px 100.8px; }
+
+  20% {
+    background-position: 191.2px 0px, 239px 100.8px; }
+
+  30% {
+    background-position: 95.6px 302.4px, 143.4px 201.6px; }
+
+  40% {
+    background-position: 95.6px 504px, 191.2px 302.4px; }
+
+  50% {
+    background-position: 191.2px 655.2px, 286.8px 403.2px; }
+
+  60% {
+    background-position: 286.8px 604.8px, 286.8px 604.8px; }
+
+  70% {
+    background-position: 478px 604.8px, 382.4px 705.6px; }
+
+  80% {
+    background-position: 669.2px 806.4px, 573.6px 806.4px; }
+
+  90% {
+    background-position: 860.4px 907.2px, 764.8px 907.2px; }
+
+  100% {
+    background-position: 956px 1008px, 956px 1008px; } }
+@-ms-keyframes stars {
+  0% {
+    background-position: 0px 0px, 0px 0px; }
+
+  10% {
+    background-position: 95.6px 100.8px, 95.6px 100.8px; }
+
+  20% {
+    background-position: 191.2px 0px, 239px 100.8px; }
+
+  30% {
+    background-position: 95.6px 302.4px, 143.4px 201.6px; }
+
+  40% {
+    background-position: 95.6px 504px, 191.2px 302.4px; }
+
+  50% {
+    background-position: 191.2px 655.2px, 286.8px 403.2px; }
+
+  60% {
+    background-position: 286.8px 604.8px, 286.8px 604.8px; }
+
+  70% {
+    background-position: 478px 604.8px, 382.4px 705.6px; }
+
+  80% {
+    background-position: 669.2px 806.4px, 573.6px 806.4px; }
+
+  90% {
+    background-position: 860.4px 907.2px, 764.8px 907.2px; }
+
+  100% {
+    background-position: 956px 1008px, 956px 1008px; } }
+@-o-keyframes stars {
+  0% {
+    background-position: 0px 0px, 0px 0px; }
+
+  10% {
+    background-position: 95.6px 100.8px, 95.6px 100.8px; }
+
+  20% {
+    background-position: 191.2px 0px, 239px 100.8px; }
+
+  30% {
+    background-position: 95.6px 302.4px, 143.4px 201.6px; }
+
+  40% {
+    background-position: 95.6px 504px, 191.2px 302.4px; }
+
+  50% {
+    background-position: 191.2px 655.2px, 286.8px 403.2px; }
+
+  60% {
+    background-position: 286.8px 604.8px, 286.8px 604.8px; }
+
+  70% {
+    background-position: 478px 604.8px, 382.4px 705.6px; }
+
+  80% {
+    background-position: 669.2px 806.4px, 573.6px 806.4px; }
+
+  90% {
+    background-position: 860.4px 907.2px, 764.8px 907.2px; }
+
+  100% {
+    background-position: 956px 1008px, 956px 1008px; } }
+@keyframes stars {
+  0% {
+    background-position: 0px 0px, 0px 0px; }
+
+  10% {
+    background-position: 95.6px 100.8px, 95.6px 100.8px; }
+
+  20% {
+    background-position: 191.2px 0px, 239px 100.8px; }
+
+  30% {
+    background-position: 95.6px 302.4px, 143.4px 201.6px; }
+
+  40% {
+    background-position: 95.6px 504px, 191.2px 302.4px; }
+
+  50% {
+    background-position: 191.2px 655.2px, 286.8px 403.2px; }
+
+  60% {
+    background-position: 286.8px 604.8px, 286.8px 604.8px; }
+
+  70% {
+    background-position: 478px 604.8px, 382.4px 705.6px; }
+
+  80% {
+    background-position: 669.2px 806.4px, 573.6px 806.4px; }
+
+  90% {
+    background-position: 860.4px 907.2px, 764.8px 907.2px; }
+
+  100% {
+    background-position: 956px 1008px, 956px 1008px; } }
+
+/*# sourceMappingURL=animations.css.map */

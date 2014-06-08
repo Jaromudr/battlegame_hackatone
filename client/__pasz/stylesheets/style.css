@@ -1,0 +1,124 @@
+/* line 5, ../sass/style.scss */
+body {
+  margin: 0px;
+  background: url("../images/spaice.png") repeat scroll 0% 0% transparent;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 16, ../sass/style.scss */
+.smallSector {
+  background: url("../images/mesh.png") repeat scroll 0% 0%/20px auto transparent;
+  width: 400px;
+  height: 400px;
+  float: left;
+}
+
+/* line 22, ../sass/style.scss */
+.smallSector2 {
+  background: url("../images/mesh.png") repeat scroll 0% 0%/20px auto transparent;
+  width: 400px;
+  height: 400px;
+  float: left;
+  margin-top: 0px;
+}
+
+/* line 30, ../sass/style.scss */
+.bigSector1 {
+  padding-top: 139px;
+  padding-left: 242px;
+}
+
+/* line 35, ../sass/style.scss */
+.life1 {
+  background: url("../images/spaice.png") repeat scroll 0% 0% transparent;
+  width: 1069px;
+  height: 584px;
+}
+
+/* line 41, ../sass/style.scss */
+.generator {
+  width: 400px;
+  margin-top: -388px;
+  margin-left: 454px;
+  border-radius: 1%;
+  height: 103px;
+  background: none repeat scroll 0% 0% #FFF;
+  box-shadow: 0px 0px 167px 181px #FFF;
+}
+
+/* line 51, ../sass/style.scss */
+.zasvet {
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 10px;
+  background: #18192f;
+  width: 20px;
+  height: 20px;
+}
+
+/* line 61, ../sass/style.scss */
+.star {
+  background: url("../images/star1.png") repeat scroll 0% 0% transparent;
+  width: 100%;
+  height: 200%;
+  margin-left: 49px;
+  position: absolute;
+  background-position: 10px;
+}
+
+/* line 70, ../sass/style.scss */
+.star2 {
+  background: url("../images/star2.png") repeat scroll 0% 0% transparent;
+  width: 100%;
+  height: 200%;
+  margin-left: 49px;
+  position: absolute;
+  background-position: 10px;
+}
+
+/* line 79, ../sass/style.scss */
+.lifeFirst {
+  width: 570px;
+  height: 21px;
+  background: url("../images/line.png") repeat scroll 0% 0% transparent;
+  position: absolute;
+  margin-left: 393px;
+  margin-top: -385px;
+  border: 1px solid #FFF;
+}
+
+/* line 89, ../sass/style.scss */
+.lifeSecond {
+  width: 570px;
+  height: 21px;
+  background: url("../images/line.png") repeat scroll 0% 0% transparent;
+  position: absolute;
+  margin-left: 393px;
+  margin-top: -351px;
+  border: 1px solid #FFF;
+}
+
+/* line 100, ../sass/style.scss */
+.lifes {
+  position: absolute;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+/* line 110, ../sass/style.scss */
+.spcor2 {
+  position: absolute;
+  margin-left: 161px;
+  margin-top: 32px;
+  width: 207px;
+  height: auto;
+}
+
+/* line 118, ../sass/style.scss */
+canvas {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 100;
+}
