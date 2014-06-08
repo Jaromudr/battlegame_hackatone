@@ -14,14 +14,14 @@
             this.setTranslate(point);
         },
         setTransition: function(time){
-            transitionProperty && (that.element.style[transitionProperty] = time + "ms");
+            transitionProperty && (this.element.style[transitionProperty] = time + "ms");
         },
         setTranslate: function(point){
             var transform = this.element.style[transformProperty], 
                 translateCss = ' translate3d(' + point.x + 'px,' + point.y + 'px, 0px)';
             if(!/translate3d\([^)]+\)/.test(transform)){
                 transform += translateCss;
-            }else{
+            } else {
                 transform = transform.replace(/translate3d\([^)]+\)/, translateCss);
             }
 

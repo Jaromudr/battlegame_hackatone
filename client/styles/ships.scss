@@ -1,7 +1,14 @@
 $cell-side:32px;
 
+.board {
+    position: relative;
+    border: 1px solid red;
+    margin: 30px;
+}
+
 .ship {
     display:block;
+    position: absolute;
     background-position: 50% 50%;
     background-size: 100%;
 }

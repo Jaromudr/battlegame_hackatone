@@ -35,12 +35,11 @@
                     board.putShip();
                 });
             });
-
         },
         shipsMaster: function(){
             this.ships.push(shipTypes.shipHunter());
             this.ships.push(shipTypes.shipFalcon());
-            this.ships.push(shipTypes.shipFalcon());
+            this.ships.push(shipTypes.shipPython());
         }
 
     };

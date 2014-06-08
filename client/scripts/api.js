@@ -3,7 +3,10 @@
     var settings = {
         baseURL: "http://127.0.0.1:8888",
         cellSide: 20,
-        boardSide: 50
+        boardSide: 30,
+        boardWidth: 30,
+        boardHeight: 20,
+        baseAreaWidth: 10
     }
 
     settings.apiURL = settings.baseURL + "/";
