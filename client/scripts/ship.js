@@ -38,6 +38,7 @@
             this.element = dom(".ship");
             this.element.addClass("ship-" + this.shipType);
             this.element.addClass("ship-red");
+            this.element.addClass("ship-size-"+this.side);
 
             this.element.style.height = settings.boardSide * this.side + "px";
             this.element.style.width = settings.boardSide * this.side + "px";
@@ -64,7 +65,13 @@
             this.updateRealPosition();
         },
         updateRealPosition: function(){
-            this.realPosition = this.currentPosition.sub(new Point(-1, -1)).mult(settings.boardSide);
+            this.realPosition = this.currentPosition.sub(new Point(-1, -1)).mult(settings.boardSide+1).add(new Point(1,1));
+//            this.realPosition = (this.currentPosition.sub(new Point(-1, -1)).mult(settings.boardSide))+1;
+//console.log(this.currentPosition.sub(new Point(-1, -1)).mult(settings.boardSide));
+//            console.log('tesst');   
+//            var cpos = this.currentPosition.sub(new Point(-1,-1));
+//            var pos=jQuery('.board-cell-'+cpos.x+'-'+cpos.y).position();
+//            this.realPosition=new Point(pos.left,pos.top);
             this.move(this.realPosition, 400);
         },
         getVisibleRectangle: function(){

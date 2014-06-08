@@ -17,6 +17,17 @@
     Game.prototype = {
         render: function(){
             app.clearBody();
+            
+            tmp_elem=dom('div.board-grid');
+            for(var i=0;i<this.board.boardHeight;++i){
+                tmp_elem2=dom('div.board-row.board-row-'+i);
+                for(var j=0;j<this.board.boardWidth;++j){
+                    tmp_elem2.appendChild(dom('div.board-cell.board-cell-'+i+'-'+j));
+                }
+                tmp_elem.appendChild(tmp_elem2);
+            }
+
+            this.board.element.appendChild(tmp_elem);
 
             this.element = dom(".game-wrapper", [
                 dom(".game-status"),
@@ -25,6 +36,9 @@
             ]);
 
             app.appBody.appendChild(this.element);
+            
+//            settings.boardSide = $('.board-cell').width()+4;
+            console.log(settings.boardSide);
         },
         play: function(){
             // this.gameLoop();

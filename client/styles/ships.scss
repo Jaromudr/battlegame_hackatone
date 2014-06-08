@@ -1,10 +1,48 @@
 $cell-side:32px;
+$cell-side-small:20px;
 
 .board {
-    position: relative;
-    border: 1px solid red;
-    margin: 30px;
+    display:inline-block;
+    margin:0 auto;
+    border:1px solid #FFF;
+    position:relative;
+    .board-grid {
+        border-collapse: collapse;
+        display:table;
+                box-sizing:border-box;
+                -moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+        
+        .board-row {
+            border-collapse: collapse;
+            display:table-row;
+                box-sizing:border-box;
+                -moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+            
+            .board-cell {
+                width:$cell-side;
+                height:$cell-side;
+                border:1px dotted grey;
+                border-collapse: collapse;
+                display:table-cell;
+                box-sizing:border-box;
+                -moz-box-sizing:border-box;
+                -webkit-box-sizing:border-box;
+                &:hover {
+                    border-color:#F00;
+                    border-style:double;
+                }
+            }
+        }
+    }
 }
+
+@media (max-width:800px) {
+    width:$cell-side-small;
+    height:$cell-side-small;
+}
+
 
 .ship {
     display:block;
@@ -21,6 +59,11 @@ $cell-side:32px;
 .ship-size-3 {
     width:$cell-side*3+2px;
     height:$cell-side*3+2px;
+}
+
+.ship-size-4 {
+    width:$cell-side*4+3px;
+    height:$cell-side*4+3px;
 }
 
 .ship-falcon {

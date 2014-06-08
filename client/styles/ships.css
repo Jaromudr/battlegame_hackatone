@@ -1,8 +1,36 @@
 .board {
-  position: relative;
-  border: 1px solid red;
-  margin: 30px; }
+  display: inline-block;
+  margin: 0 auto;
+  border: 1px solid #FFF;
+  position: relative; }
+  .board .board-grid {
+    border-collapse: collapse;
+    display: table;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box; }
+    .board .board-grid .board-row {
+      border-collapse: collapse;
+      display: table-row;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box; }
+      .board .board-grid .board-row .board-cell {
+        width: 32px;
+        height: 32px;
+        border: 1px dotted grey;
+        border-collapse: collapse;
+        display: table-cell;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box; }
+        .board .board-grid .board-row .board-cell:hover {
+          border-color: #F00;
+          border-style: double; }
 
+@media (max-width: 800px) {
+  width: 20px;
+  height: 20px; }
 .ship {
   display: block;
   position: absolute;
@@ -16,6 +44,10 @@
 .ship-size-3 {
   width: 98px;
   height: 98px; }
+
+.ship-size-4 {
+  width: 131px;
+  height: 131px; }
 
 .ship-falcon.ship-red {
   background-image: url(../img/Falcon_red.png); }
@@ -31,3 +63,5 @@
   background-image: url(../img/Hunter_red.png); }
 .ship-hunter.ship-blue {
   background-image: url(../img/Hunter_blue.png); }
+
+/*# sourceMappingURL=ships.css.map */

@@ -2,6 +2,7 @@
 
 body {
     overflow:hidden;
+    text-align:center;
 }
 
 h1 {
@@ -91,22 +92,6 @@ $ship-anim-time:10s;
         left:-30%;
         bottom:150%;
     }
-/*    16% {
-        left:-14%;
-        bottom:130%;
-    }
-    22% {
-        left:2%;
-        bottom:110%;
-    }
-    28% {
-        left:18%;
-        bottom:90%;
-    }
-    34% {
-        left:34%;
-        bottom:70%;
-    }*/
     40%,60% {
         left:50%;
         bottom:50%;

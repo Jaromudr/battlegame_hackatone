@@ -15,8 +15,8 @@
         render: function(){
             this.element = dom(".board");
 
-            this.element.style.width = this.boardWidth * settings.boardSide + "px";
-            this.element.style.height = this.boardHeight * settings.boardSide + "px";
+//            this.element.style.width = this.boardWidth * settings.boardSide + "px";
+//            this.element.style.height = this.boardHeight * settings.boardSide + "px";
 
             return this.element;
         },
