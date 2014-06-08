@@ -39,8 +39,8 @@
             this.element.addClass("ship-" + this.shipType);
             this.element.addClass("ship-red");
 
-            this.element.style.height = settings.boardSide + "px";
-            this.element.style.width = settings.boardSide + "px";
+            this.element.style.height = settings.boardSide * this.side + "px";
+            this.element.style.width = settings.boardSide * this.side + "px";
             return this.element;
         },
         setPosition: function(position){

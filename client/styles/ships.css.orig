@@ -27,7 +27,7 @@
 .ship-python.ship-blue {
   background-image: url(../img/Python_blue.png); }
 
-.ship-hunter.ship-red {
+.ship-falcon.ship-red {
   background-image: url(../img/Hunter_red.png); }
-.ship-hunter.ship-blue {
+.ship-falcon.ship-blue {
   background-image: url(../img/Hunter_blue.png); }
