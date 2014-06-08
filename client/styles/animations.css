@@ -21,6 +21,34 @@
   -ms-animation: stars 210s infinite linear;
   animation: stars 210s infinite linear; }
 
+.anim-ufo-steals-cow {
+  width: 446px;
+  height: 313px;
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  background: url(../img/UFO.png) 50% 50% transparent no-repeat; }
+
+.anim-ufo-steals-cow:before {
+  content: '';
+  position: absolute;
+  left: 209px;
+  right: 209px;
+  bottom: 0;
+  display: block;
+  width: 28px;
+  height: 144px;
+  background-image: url(../img/cow.png);
+  background-color: transparent;
+  background-position: 50% 109px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  -webkit-animation: cow 2s infinite linear;
+  -moz-animation: cow 2s infinite linear;
+  -o-animation: cow 2s infinite linear;
+  -ms-animation: cow 2s infinite linear;
+  animation: cow 2s infinite linear; }
+
 @-webkit-keyframes boom {
   from {
     background-position: 0px 50%; }
@@ -51,6 +79,36 @@
 
   to {
     background-position: -729px 50%; } }
+@-webkit-keyframes cow {
+  0% {
+    background-position: 50% 109px; }
+
+  70%,100% {
+    background-position: 50% -35px; } }
+@-moz-keyframes cow {
+  0% {
+    background-position: 50% 109px; }
+
+  70%,100% {
+    background-position: 50% -35px; } }
+@-ms-keyframes cow {
+  0% {
+    background-position: 50% 109px; }
+
+  70%,100% {
+    background-position: 50% -35px; } }
+@-o-keyframes cow {
+  0% {
+    background-position: 50% 109px; }
+
+  70%,100% {
+    background-position: 50% -35px; } }
+@keyframes cow {
+  0% {
+    background-position: 50% 109px; }
+
+  70%,100% {
+    background-position: 50% -35px; } }
 @-webkit-keyframes stars {
   0% {
     background-position: 0px 0px, 0px 0px; }
